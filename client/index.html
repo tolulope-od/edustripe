@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale:1.0" />
+    <link rel="stylesheet" type="text/css" href="Css\style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Tangerine|Inconsolata|Almendra|Aclonica|Allura"
+    />
+    <title>EduStripe</title>
+  </head>
+  <body>
+    <div>
+      <nav id="navbar" class="">
+        <div class="nav-wrapper">
+          <!-- Navbar Logo -->
+          <div class="logo">
+            <!-- Logo Placeholder for Inlustration -->
+            <a href="#home"><i class="fas fa-chess-knight"></i> Logo</a>
+          </div>
+
+          <!-- Navbar Links -->
+          <ul id="menu">
+            <li><a href="#home">Home</a></li>
+            <!---->
+            <li><a href="#services">Services</a></li>
+            <!---->
+            <li><a href="#about">About</a></li>
+            <!---->
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Menu Icon -->
+      <div class="menuIcon">
+        <span class="icon icon-bars"></span>
+        <span class="icon icon-bars overlay"></span>
+      </div>
+
+      <div class="overlay-menu">
+        <ul id="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="Images\img1.jpg" style="width:100%" />
+        <div class="text">
+          <div class="desc">RUNNING A SCHOOL</div>
+          <div class="desc">IS HARD</div>
+          <div class="minidesc">Receiving Payments Should Not Be</div>
+          <button class="startbut">START NOW</button>
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="Images\img33.jpg" style="width:100%" />
+        <div class="text">
+          <div class="desc">TRAINING A CHILD</div>
+          <div class="desc">IS HARD</div>
+          <div class="minidesc">Paying Their School Fees Should not Be</div>
+          <button class="startbut">START NOW</button>
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="Images\img3.jpg" style="width:100%" />
+        <div class="text">
+          <div class="desc">PLAN, SAVE</div>
+          <div class="desc">AND INVEST</div>
+          <div class="minidesc">Towards Goals That Matter</div>
+          <button class="startbut">START NOW</button>
+        </div>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!--
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+    -->
+
+    <div></div>
+
+    <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+    </script>
+
+    <script>
+      // Navigation
+      // Responsive Toggle Navigation =============================================
+      let menuIcon = document.querySelector(".menuIcon");
+      let nav = document.querySelector(".overlay-menu");
+
+      menuIcon.addEventListener("click", () => {
+        if (nav.style.transform != "translateX(0%)") {
+          nav.style.transform = "translateX(0%)";
+          nav.style.transition = "transform 0.2s ease-out";
+        } else {
+          nav.style.transform = "translateX(-100%)";
+          nav.style.transition = "transform 0.2s ease-out";
+        }
+      });
+
+      // Toggle Menu Icon ========================================
+      let toggleIcon = document.querySelector(".menuIcon");
+
+      toggleIcon.addEventListener("click", () => {
+        if (toggleIcon.className != "menuIcon toggle") {
+          toggleIcon.className += " toggle";
+        } else {
+          toggleIcon.className = "menuIcon";
+        }
+      });
+    </script>
+  </body>
+</html>
