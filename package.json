@@ -1,0 +1,22 @@
+{
+  "name": "edustripe",
+  "version": "1.0.0",
+  "description": "Edustripe",
+  "main": "server.js",
+  "scripts": {
+    "server": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joeveloper/edustripe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joeveloper/edustripe/issues"
+  },
+  "homepage": "https://github.com/joeveloper/edustripe#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
